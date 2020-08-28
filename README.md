@@ -16,7 +16,7 @@
 ### [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
-fisher add rafaelrinaldi/pure
+fisher add ndkimhao18/pure
 ```
 
 ### [Oh My Fish!](https://github.com/oh-my-fish)

@@ -1,6 +1,7 @@
 function _pure_prompt_symbol \
     --description 'Print prompt symbol' \
-    --argument-names exit_code
+    --argument-names exit_code \
+    --argument-names last_pipestatus
 
     set --local prompt_symbol (_pure_get_prompt_symbol)
     set --local symbol_color_success (_pure_set_color $pure_color_prompt_on_success)
@@ -16,5 +17,7 @@ function _pure_prompt_symbol \
         end
     end
 
-    echo "$symbol_color$prompt_symbol"
+    set --local prompt_status (_pure_print_pipestatus $exit_code "[" "]" "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) (string split ' ' "$last_pipestatus"))
+
+    echo "$prompt_status$symbol_color$prompt_symbol"
 end
